@@ -1,0 +1,75 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+% Awesome CV LaTeX Template for CV/Resume
+%
+% This template has been downloaded from:
+% https://github.com/posquit0/Awesome-CV
+%----------------------------------------------------------
+% CONFIGURATIONS
+%----------------------------------------------------------
+\documentclass[11pt, a4paper]{./Awesome-CV/awesome-cv}
+\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
+\fontdir[fonts/]
+% Color for highlights
+% Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange awesome-nephritis, awesome-concrete, awesome-darknight
+\colorlet{awesome}{awesome-red}
+% Set false if you don't want to highlight section with awesome color
+\setbool{acvSectionColorHighlight}{true}
+% Uncomment if you would like to specify your own color
+% \definecolor{awesome}{HTML}{CA63A8}
+
+% Colors for text
+% Uncomment if you would like to specify your own color
+% \definecolor{darktext}{HTML}{414141}
+% \definecolor{text}{HTML}{333333}
+% \definecolor{graytext}{HTML}{5D5D5D}
+% \definecolor{lighttext}{HTML}{999999}
+
+%info seperator
+% If you would like to change the social information separator from a pipe (|) to something else
+\renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
+%	PERSONAL INFORMATION
+%--------------------------------------------------------------------------
+% Available options: circle|rectangle,edge/noedge,left/right
+% \photo[rectangle,edge,right]{./examples/profile}
+\name{Siddharth}{Reed}
+\address{1088 Sunset Dr., Kelowna, BC, Canada, V1Y 9W1}
+\mobile{647 822 9846}
+%%% Social
+\email{slreed@andrew.cmu.edu}
+%\homepage{www.posquit0.com}
+\github{GitHub} %can change link in awesome-cv.cls
+\linkedin{LinkedIn} %can change link in awesome-cv.cls
+%%% Optionals
+%\position{Bioinformatics Intern}%{\enskip\cdotp\enskip}Security Expert}
+% \gitlab{gitlab-id}
+% \stackoverflow{SO-id}{SO-name}
+% \twitter{@twit}
+% \skype{skype-id}
+% \reddit{reddit-id}
+% \extrainfo{extra informations}
+%\quote{``Be the change that you want to see in the world."}
+%--------------------------------------------------------------------------
+\begin{document}
+%HEADER/FOOTER
+% Give optional argument to change alignment(C: center, L: left, R: right)
+\makecvheader[C]
+% Print the footer with 3 arguments(<left>, <center>, <right>)
+% Leave any of these blank if they are not needed
+\makecvfooter{Siddharth Reed}{Résumé}{\today}
+%----------------------------------------------------------
+%CV/RESUME CONTENT---------------------------------------------------------
+\input{resume/summary.tex}
+\input{resume/education.tex}
+%\vspace{-0.2in}
+\input{resume/skills.tex}
+%\vspace{-0.2in}
+\input{resume/experience.tex}
+%\vspace{-0.2in}
+\input{resume/extracurricular.tex}
+\input{resume/honors.tex}
+%\input{resume/presentation.tex}
+%\input{resume/writing.tex}
+%\input{resume/committees.tex}
+%--------------------------------------------------------------------------
+\end{document}

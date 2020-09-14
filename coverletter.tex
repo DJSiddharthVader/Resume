@@ -1,43 +1,10 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
 \documentclass[11pt, a4paper]{./Awesome-CV/awesome-cv}
-\fontdir[fonts/]% Specify the location of the included fonts
-%CONFIG INFO
 \geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}% Configure page margins with geometry
-% Color for highlights
-% Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange awesome-nephritis, awesome-concrete, awesome-darknight
-\colorlet{awesome}{awesome-red}
-% Set false if you don't want to highlight section with awesome color
-\setbool{acvSectionColorHighlight}{true}
-% Uncomment if you would like to specify your own color
-% \definecolor{awesome}{HTML}{CA63A8}
-% Colors for text
-% Uncomment if you would like to specify your own color
-% \definecolor{darktext}{HTML}{414141}
-% \definecolor{text}{HTML}{333333}
-% \definecolor{graytext}{HTML}{5D5D5D}
-% \definecolor{lighttext}{HTML}{999999}
-% If you would like to change the social information separator from a pipe (|) to something else
-\renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
-%PERSONAL INFORMATION
-\name{Siddharth}{Reed}
-\address{5 Northtown Way, North York, ON, M2N 7A1, Canada}
-\mobile{647 822 9846}
-\email{reeds4@mcmaster.ca}
-\github{GitHub} %can change link in awesome-cv.cls
-\linkedin{LinkedIn} %can change link in awesome-cv.cls
-%\homepage{www.posquit0.com}
-%Optionals
-%\position{Associate Computation Biologist}%{\enskip\cdotp\enskip}Security Expert}
-% \gitlab{gitlab-id}
-% \stackoverflow{SO-id}{SO-name}
-% \skype{skype-id}
-% \reddit{reddit-id}
-% \twitter{@twit}
-% \extrainfo{extra informations}
-%\quote{``Be the change that you want to see in the world."}
-%Photo
-% Available options: circle|rectangle,edge/noedge,left/right
-%\photo[circle,noedge,left]{./examples/profile}
-%LETTER INFORMATION
+%---------------------------------------------------------
+%               LETTER INFORMATION
+%---------------------------------------------------------
 \letterdate{}
 \recipient% The company being applied to
     {\vspace{-0.95in}} %recipient name
@@ -58,57 +25,14 @@
 \makelettertitle % Print the title with above letter information
 
 \begin{cvletter}
-To whom it may concern, \\\\
-I am a fifth year student in the Molecular Biology \& Genetics Co-op program.
-I initially entered this program because of my interest in genetics and my courses related to genetics have always by my most interesting courses, such as MolBiol 2C03, 3O03, 3II3, 3V03, all of which were strongly focused on genetics, doing well in most of these courses.\\
-Further my research experience as a co-op student and my undergraduate honors thesis also focused on genetics, including leveraging gene expression data to compare the human placenta to various forms of cancer and investigating the relationship between CRISPR activity and rates of horizontal gene transfer in bacteria.
-Working on my thesis project has also helped me improve my skills presenting and explaining ideas to keep and audience engaged and ensure all of the relevant details are communicated effectively to make my point.
-Much of my work experience also required collaborating with people, including explaining biological or statistical concepts to those with a different set of knowledge than me.\\
-I also have more formal experience with teaching as I was a volunteer tutor with Frontier college for 4 academic semesters.
-Students would come in, often with math or biology homework, and I would either help them with assignments, help them work through larger projects or them study for upcoming tests.
-I would alternate between working with one or multiple students, depending on the week, which helped me learn how to adapt to the needs of students and pinpoint exactly what they were struggling with.\\
-I also had some experience mentoring other undergraduate students on the McMaster iGEM team, I would help prepare introductory lessons and activity to help teach them about synthetic biology.\\
-I would love to gain further experience teaching, and to show new students how important and interesting evolution and biodiversity are. Further this position would give me the opportunity to help my fellow students and hopefully inspire them to continue studying a subject I personally find so interesting.
 \vspace{1.3in}
 \end{cvletter}
 %Letter Closing
 \\ Thank you for your time and consideration\\\\
 %Sincerely,\\
 \textbf{Siddharth Reed}\\
-Honors Molecular Biology \& Genetics Co-op\\
-McMaster University
+MSc. Student in Computational Biology \\
+Carnegie Mellon University
 \makecvfooter {Siddharth Reed} {Cover Letter} {\today}% Print the footer with 3 arguments(<left>, <center>, <right>)}
 \end{document}
 
-\lettersection{Why Me?}
-%Basics/Intro
-\hspace{0.4in}I am a fourth year student in the Molecular Biology \& Genetics Co-op program at McMaster University in Ontario, Canada.
-I first became interested in programming in an intro to programming class, where the final project (an SIR model implementation) really showed me first-hand how programming can inform biology.
-This made me want to further pursue the intersection between my primary field, Biology, and my budding passion, Computer Science, leading me to pursue Bioinformatics.
-%I continued in the Molecular Biology \& Genetics program but took as many computer science and math electives as possible to round out my knowledge and skills.
-
-%Adapsyn
-\hspace{0.4in}The experience I gained from my summer research job and my personal projects help me get paid internship position at Adapsyn, a startup focused on natural products discovery.
-%At Adapsyn I got a crash course in working in a more demanding, interdisciplinary and fast-paced environment.
-I collaborated with chemists, microbiologists and machine learning engineers creating programs and visualizations to help direct the efforts of the natural products chemists.
-Documenting, interpreting and justifying the validity of my results to the non-technical staff was a core component of my responsibilities there.
-Working closely with wet lab scientists to understand the problems I was trying to solve showed me importance of having clearly defined, reasonable requirements and goals.
-I developed my ability to produce statistically sound analysis, both reproducible and accessible to wet lab scientists without compromising accuracy.
-%Thesis
-\hspace{0.4in}Currently, I am conducting my fourth year thesis with Dr. G. Brian Golding, trying to elucidate the relationship between CRISPR-Cas systems and rate of Horizontal Gene Transfer using network theory.
-For this project I am using software like git and latex for version control and documentation respectively, in order to keep my project organized and my analysis reproducible.
-I am navigating how to ensure my analysis is statistically rigorous and to know clearly the flaws and assumptions that are implicit in the methods and conclusions I employ.
-And while technical skills are important, the most practical experience I have gained is how to balance learning new things to solve problems and asking for help or guidance when I cannot find a relevant stackoverflow post.
-\vspace{-0.2in}
-\lettersection{Why You?}
-\hspace{0.4in}
-
-%Scrap
-%Working in Dr. Golding's lab has also helped me improve my skills presenting and trying to explain ideas, as my project is very different from the other research in the lab, and thus requires me to explain new things every time I collaborate with my lab members.
-%I also experienced working as a data science intern at the start-up Adapsyn, working to write reusable, simple-to-use software accessible to both wetlab and dry lab scientists alike.
-%It is an entirely computational project, involving me writing scripts to scrape and clean data, construct networks and preform statistical analysis in both python and bash.
-%Summer research
-%Simultaneously I sought to develop my practical skills, working on small projects to teach myself to code and eventually landing a research position in the lab of Dr. Brian Golding.
-%This experience really solidified my desire to pursue a career in Bioinformatics research.
-%I learned much more about scripting, using a terminal, using vim, parsing NCBI for data and latex by trying to solve problems.
-%Not only that but attending seminars on mathematical biology, collaborating with other lab members and even just hanging out with them was thoroughly fulfilling and enjoyable.

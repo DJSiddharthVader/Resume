@@ -195,7 +195,7 @@
 % For fundamental structures
 \newcommand*{\headerfirstnamestyle}[1]{{\fontsize{46pt}{1em}\headerfontlight\color{graytext} #1}}
 \newcommand*{\headerlastnamestyle}[1]{{\fontsize{46pt}{1em}\headerfont\bfseries\color{text} #1}}
-\newcommand*{\headerpositionstyle}[1]{{\fontsize{7.6pt}{1em}\bodyfont\scshape\color{awesome} #1}}
+\newcommand*{\headerpositionstyle}[1]{{\fontsize{17.6pt}{2em}\bodyfont\scshape\color{awesome} #1}}
 \newcommand*{\headeraddressstyle}[1]{{\fontsize{11pt}{1em}\headerfont\itshape\color{lighttext} #1}}
 \newcommand*{\headersocialstyle}[1]{{\fontsize{9pt}{1em}\headerfont\color{text} #1}}
 \newcommand*{\headerquotestyle}[1]{{\fontsize{9pt}{1em}\bodyfont\itshape\color{darktext} #1}}
@@ -685,24 +685,26 @@
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
   %\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
-  	\letterdatestyle{\@letterdate} \\
-    \recipienttitlestyle{\@recipientname} %& \letterdatestyle{\@letterdate}
   %\end{tabular*}
-  %\begin{singlespace}
-	\\
-    \recipientaddressstyle{\@recipientaddress}
-  %\end{singlespace}
+  \begin{singlespace}
+    \letterdatestyle{\@letterdate}
+  \end{singlespace}
+  \vspace{0.1in}
+  \begin{singlespace}
+      \recipienttitlestyle{\@recipientname} \\ %& \letterdatestyle{\@letterdate}
+      \recipientaddressstyle{\@recipientaddress}
+  \end{singlespace}
   	\\
   \ifthenelse{\isundefined{\@lettertitle}}
     {}
     {\lettertitlestyle{\@lettertitle} \\\\}
-  \lettertextstyle{\@letteropening}
+  \lettertextstyle{\@letteropening\\}
 }
 
 % Define a closing of the cover letter
 % Usage: \makeletterclosing
-\newcommand{\@program}{Honours Molecular Biology \& Genetics Co-op}
-\newcommand{\@university}{McMaster University}
+\newcommand{\@program}{MSc. Student in Computational Biology}
+\newcommand{\@university}{Car\hspace{0.07em}negie Mellon University}
 \newcommand*{\makeletterclosing}{%
   \vspace{3.4mm}
   \lettertextstyle{\@letterclosing} \\

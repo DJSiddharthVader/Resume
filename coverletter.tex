@@ -1,31 +1,51 @@
 %!TEX TS-program = xelatex
 %!TEX encoding = UTF-8 Unicode
 \documentclass[11pt, a4paper]{./Awesome-CV/awesome-cv}
-\geometry{left=3.1cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}% Configure page margins with geometry
+\geometry{left=3.1cm, top=1.8cm, right=3.1cm, bottom=1.8cm, footskip=.5cm}% Configure page margins with geometry
 \usepackage{wallpaper}
 \input{./personal_info.tex}
-%---------------------------------------------------------
+
 %               LETTER INFORMATION
 %---------------------------------------------------------
 %\position{Bioinformatics Summer Intern}
 \letterdate{\today}
-\lettertitle{Application for Bioinformatics Summer Intern}
+%\lettertitle{Application for Bioinformatics Summer Intern}
 \recipient{GRAIL} %company name
           {1525 O'Brien Drive\\
            Menlo Park, CA 94025}
 \letteropening{Dear Hiring Manager,}% How the letter is opened
-\letterclosing{\\Thank you for your time and consideration.\\ Sincerely,}
+\letterclosing{Thank you for your time and consideration.\\ Sincerely,}
 %\letterenclosure[Attached]{Résumé}% Any enclosures with the letter
 \ULCornerWallPaper{1}{CMULetterHead.pdf}
-
 \begin{document}
-\makecvheader[0.1in]{R} %Give optional alignment (C: center, L: left, R: right)
-%\vspace{-0.7in}
+\makecvheader[-0.22in]{R}{16pt} %Give optional alignment (C: center, L: left, R: right)
+\topskip0pt
+\vspace*{\fill}
+%\vspace{0.2in}
 \makelettertitle %Print the title with above letter information
+
 \begin{cvletter}
-    blank
+\hspace{8mm} I am an first year MSc. student in Computational Biology at Carnegie Mellon University applying for the bioinformatics summer internship.
+\par \hspace{8mm}
+Cancer is to vast and complex a beast to try and detect, let alone detect early and robustly, that you would certainly need equally vast and complex data to study it.
+Of course this is a lesson I had to learn several times over throughout my career, that things in biology are rarely simple.
+Shortly after I discovered bioinformatics as a field in my first year I spend what time and electives I had shoring up my quantitative skills, mostly independently.
+I did take an excellent course on software design that introduced me to concepts like terminal commands, version control with git and some object oriented programming with python.
+I was also fortunate to have an advisor who preached to me the gospel of Linux tome.
+After finding out how powerful these tools could be I kept trying to improve myself, using them for everything.
+\par \hspace{8mm}
+Learning to code and analyze data are interesting enough on their own, but biological data presents many unique challenges among analytical fields.
+The desire to try and discern meaningful, clear patterns from such messy subjects helped lead me to work studying cancers.
+I conducted an internship in the Michael Hoffman lab at the University of Toronto under the supervision of Post-Doc and placenta expert Samantha Wilson.
+She conceptualized the project of comparing transcriptomes profiles of various cancers and the placenta, trying to find what the placenta was regulating “correctly”that cancers cells were not.
+I worked with the recount2 data and ended up reading a lot about how transcriptomic data is produced to ensure I knew what to expect and how to work with it.
+I also spent much of my time visualizing my results and presenting them to experts and non-experts where the placenta and cancers differ and what that could imply for future cancer research.
+\par \hspace{8mm}
+I know my educational background in genetics, experience characterizing cancers and enthusiasm for intricate biological problems makes me especially suited for this internship.
+
 \end{cvletter}
 \makeletterclosing
+\vspace*{\fill}
 \makecvfooter{Siddharth Reed}{}{Cover Letter} %Print the footer with 3 arguments(<left>, <center>, <right>)}
 \end{document}
 

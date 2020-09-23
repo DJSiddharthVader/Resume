@@ -1,70 +1,29 @@
 %!TEX TS-program = xelatex
 %!TEX encoding = UTF-8 Unicode
 \documentclass[11pt, a4paper]{./Awesome-CV/awesome-cv}
-\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}% Configure page margins with geometry
+\geometry{left=3.1cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}% Configure page margins with geometry
+\usepackage{wallpaper}
 \input{./personal_info.tex}
+%---------------------------------------------------------
 %               LETTER INFORMATION
 %---------------------------------------------------------
-\position{Bioinformatics Summer Intern}
+%\position{Bioinformatics Summer Intern}
 \letterdate{\today}
 \lettertitle{Application for Bioinformatics Summer Intern}
 \recipient{GRAIL} %company name
           {1525 O'Brien Drive\\
            Menlo Park, CA 94025}
-\letteropening{To whom it may concern,}% How the letter is opened
+\letteropening{Dear Hiring Manager,}% How the letter is opened
 \letterclosing{\\Thank you for your time and consideration.\\ Sincerely,}
 %\letterenclosure[Attached]{Résumé}% Any enclosures with the letter
+\ULCornerWallPaper{1}{CMULetterHead.pdf}
 
-%%Position Description
-%GRAIL is a healthcare company whose mission is to detect cancer early, when it can be cured.
-%GRAIL is focused on alleviating the global burden of cancer by developing pioneering technology to detect and identify multiple deadly cancer types early.
-%The company is using the power of next-generation sequencing, population-scale clinical studies, and state-of-the-art computer science and data science to enhance the scientific understanding of cancer biology, and to develop its multi-cancer early detection blood test.
-%GRAIL is located in Menlo Park, California.
-%It is supported by leading global investors and pharmaceutical, technology, and healthcare companies. For more information, please visit www.grail.com
-%
-%This summer intern position will be part of the Bioinformatics team.
-%They will be trained in the development of improved methods, analysis, pipelines, and algorithms of next-generation sequencing data, for cancer detection, conformant to CLIA guidelines.
-%They will enjoy life in the San Francisco Bay Area, activities with other summer interns, and start-up company culture.
-%
-%You Will
-% - Work on complex problems in which analysis of data requires an in-depth evaluation of various factors.
-% - Collaborate with software engineering, biostatistics and bioinformatics teams.
-% - Exercise judgment in defining methods, techniques and evaluation criteria for obtaining results.
-% - Translate findings into recommendations for the development of new products.
-%Exact responsibilities will be decided in collaboration with intern mentor(s).
-%The following are examples of possible areas of focus: Apply machine learning methods to modeling and interpretation of biological dataIdentify and validate genomic features driving tumor developmentDevelop and implement new algorithms, or implement algorithms from the literature.
-%
-%Desired Background
-% - Bachelors, Masters or Ph.D. students in Bioinformatics or related fields.
-% - Previous life science research experience
-% - Experience with designing and developing complex bioinformatics next-generation sequencing data analysis solutions.
-% - Strong command of statistics as applied to the analysis of NGS data and analytical study design.
-% - Demonstrated expertise in at least one programming language (Java/C++, Go, Python (numpy, etc), R,), proficiency in Linux environment, knowledge of cloud technologies (such as AWS), experience with source control practices and tools (Perforce, Git, Arcanist, etc.)
-
-%We are an equal opportunity employer and value diversity at our company. We do not discriminate on the basis of race, religion, color, national origin, gender, sexual orientation, age, marital status, veteran status, or disability status.
 \begin{document}
-\makecvheader[C] %Give optional alignment (C: center, L: left, R: right)
+\makecvheader[0.1in]{R} %Give optional alignment (C: center, L: left, R: right)
+%\vspace{-0.7in}
 \makelettertitle %Print the title with above letter information
-%\vspace{-0.4in}
 \begin{cvletter}
-\hspace{0.8em}  Cancer is to vast and complex a beast to try and detect, let alone detect early and robustly, that you would certainly need equally vast and complex data to study it.
-Of course this is a lesson I had to learn several times over throughout my career, that things in biology are rarely simple.
-%When I took my first computer science course alongside a course in evolution I realized how similar the systems in biology can appear to machines and software.
-Shortly after I discovered bioinformatics as a field in my first  year I spend what time and electives I had shoring up my quantitative skills, mostly independantly.
-%Most of my courses were taken up studying molecular biology and genetics so I had to pick my electives and find my own time to learn how to write code.
-I did take an excellent course on software design that introduced me to concepts like terminal commands, version control with git and some object oriented programming with python.
-I was also fortunate to have an advisor who preached to me the gospel of Linux to me.
-After finding out how powerful these tools could be I kept trying to improve myself, using them for everything.
-\par
-Lairing to code and analyze data are interesting enough on their own, but biological data presents many unique challenges among analytical fields.
-%Computers and statistics are often consider rigid and strict in contrast to living systems that are constantly adapting to their environments.
-The desire to try and discern meaningful, clear patterns from such messy subjects helped lead me to work studying cancers.
-I conducted an internship in Michael Hoffman\'s lab at the University of Toronto under the supervision of Post-Doc and placenta expert Samantha Wilson.
-She conceptualized the project of comparing transcriptomic profiles of various cancers and the placenta, trying to find what the placenta was regulating ``correctly'' that cancers cells were not.
-I worked with the recount2 data and ended up reading a lot about how transcriptomic data is produced to ensure I knew what to expect and how to work with it.
-I also spent much of my time visualizing my results and presenting them to experts and non-experts where the placenta and cancers differ and what that could imply for future cancer research.
-\par
-I know my educational background in genetics, experience charactrizing cancers and enthusiasm for intricate biological problems makes me especially suited for this internship.
+    blank
 \end{cvletter}
 \makeletterclosing
 \makecvfooter{Siddharth Reed}{}{Cover Letter} %Print the footer with 3 arguments(<left>, <center>, <right>)}

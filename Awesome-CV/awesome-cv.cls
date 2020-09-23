@@ -191,8 +191,8 @@
 %----------------------------------------------------------
 % Configure styles for each CV elements
 % For fundamental structures
-\newcommand*{\headerfirstnamestyle}[1]{{\fontsize{26pt}{1em}\headerfontlight\color{awesome} #1}}
-\newcommand*{\headerlastnamestyle}[1]{{\fontsize{26pt}{1em}\headerfont\bfseries\color{text} #1}}
+\newcommand*{\headerfirstnamestyle}[2][26pt]{{\fontsize{#1}{1em}\headerfontlight\color{awesome} #2}}
+\newcommand*{\headerlastnamestyle}[2][26pt]{{\fontsize{#1}{1em}\headerfont\bfseries\color{text} #2}}
 \newcommand*{\headerpositionstyle}[1]{{\fontsize{14.6pt}{2em}\bodyfont\scshape\color{awesome} #1}}
 \newcommand*{\headeraddressstyle}[1]{{\fontsize{11pt}{1em}\headerfont\itshape\color{lighttext} #1}}
 \newcommand*{\headersocialstyle}[1]{{\fontsize{9pt}{1em}\headerfont\color{text} #1}}
@@ -356,7 +356,7 @@
 %% Define helper macros a user can change easily
 % Header
 \newcommand{\acvHeaderNameDelim}{\space}
-\newcommand{\acvHeaderAfterNameSkip}{.4mm}
+\newcommand{\acvHeaderAfterNameSkip}{3.4mm}
 \newcommand{\acvHeaderAfterPositionSkip}{.4mm}
 \newcommand{\acvHeaderAfterAddressSkip}{-.5mm}
 \newcommand{\acvHeaderIconSep}{\space}
@@ -389,13 +389,13 @@
 %----------------------------------------------------------
 % Define a header for CV
 % Usage: \makecvheader
-\newcommand*{\makecvheader}[2][0in]{%
+\newcommand*{\makecvheader}[3][0in]{%
   \newlength{\headertextwidth}
   \setlength{\headertextwidth}{\textwidth}
   \begin{minipage}[c]{\headertextwidth}
       \vspace{#1}
     \ifthenelse{\equal{#2}{L}}{\raggedright}{\ifthenelse{\equal{#2}{R}}{\raggedleft}{\centering}}
-    \headerfirstnamestyle{\@firstname}\headerlastnamestyle{{}\acvHeaderNameDelim\@lastname}%
+    \headerfirstnamestyle[#3]{\@firstname}\headerlastnamestyle[#3]{{}\acvHeaderNameDelim\@lastname}%
     \\[\acvHeaderAfterNameSkip]%
     \ifthenelse{\isundefined{\@position}}{}{\headerpositionstyle{\@position\\[\acvHeaderAfterPositionSkip]}}%
     \ifthenelse{\isundefined{\@address}}{}{\headeraddressstyle{\@address\\[\acvHeaderAfterAddressSkip]}}%
@@ -637,41 +637,35 @@
 % Define a title of the cover letter
 % Usage: \makelettertitle
 \newcommand*{\makelettertitle}{%
-  \vspace{8.4mm}
   \setlength\tabcolsep{20pt}
   \setlength{\extrarowheight}{20pt}
   %\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
   %\end{tabular*}
   \begin{singlespace}
-    \letterdatestyle{\@letterdate}
-  \end{singlespace}
-  %\vspace{0.1in}
-  \begin{singlespace}
-      \recipienttitlestyle{\@recipientname} \\ %& \letterdatestyle{\@letterdate}
-      \recipientaddressstyle{\@recipientaddress}
+    \letterdatestyle{\@letterdate}\\
+    \recipienttitlestyle{\@recipientname} \\
+    \recipientaddressstyle{\@recipientaddress}
   \end{singlespace}
   \ifthenelse{\isundefined{\@lettertitle}}
-    {}
-    {\lettertitlestyle{\@lettertitle} \\}
-  %\vspace{0.1in}
+    {\vspace{0.3in}}
+    {\lettertitlestyle{\@lettertitle}\vspace{0.3in}\\}
   \lettertextstyle{\@letteropening}
-  \vspace{0.1in}
+
 }
 
 % Define a closing of the cover letter
 % Usage: \makeletterclosing
 \newcommand{\@program}{MSc. Student in Computational Biology}
-\newcommand{\@university}{Car\hspace{0.07em}negie Mellon University}
+\newcommand{\@university}{Car\hspace{0.03em}negie Mellon University}
 \newcommand*{\makeletterclosing}{%
-  \vspace{0.7in}
+  \vspace{0.4in}
   \lettertextstyle{\@letterclosing} \\
   \letternamestyle{\@firstname\ \@lastname} \\
   \lettertextstyle{\@program} \\
   \lettertextstyle{\@university} \\
   \ifthenelse{\isundefined{\@letterenclosure}}
-    {\\}
-    {%
-      \\
-      \letterenclosurestyle{\@letterenclname: \@letterenclosure} \\
+    {}
+    {
+      \letterenclosurestyle{\@letterenclname: \@letterenclosure}
     }
 }

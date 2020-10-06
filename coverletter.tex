@@ -18,7 +18,8 @@
 %\letterenclosure[Attached]{Résumé}% Any enclosures with the letter
 \ULCornerWallPaper{1}{CMULetterHead.pdf}
 \begin{document}
-\makecvheader[-0.22in]{R}{16pt} %Give optional alignment (C: center, L: left, R: right)
+%\makecvheader[-0.22in]{R}{16pt}{3.4mm} %Give optional alignment (C: center, L: left, R: right)
+\makeletterheader{R} %Give optional alignment (C: center, L: left, R: right)
 \topskip0pt
 \vspace*{\fill}
 %\vspace{0.2in}
@@ -27,19 +28,19 @@
 \begin{cvletter}
 \hspace{8mm} I am an first year MSc. student in Computational Biology at Carnegie Mellon University applying for the bioinformatics summer internship.
 \par \hspace{8mm}
-Cancer is to vast and complex a beast to try and detect, let alone detect early and robustly, that you would certainly need equally vast and complex data to study it.
-Of course this is a lesson I had to learn several times over throughout my career, that things in biology are rarely simple.
-Shortly after I discovered bioinformatics as a field in my first year I spend what time and electives I had shoring up my quantitative skills, mostly independently.
-I did take an excellent course on software design that introduced me to concepts like terminal commands, version control with git and some object oriented programming with python.
-I was also fortunate to have an advisor who preached to me the gospel of Linux tome.
-After finding out how powerful these tools could be I kept trying to improve myself, using them for everything.
-\par \hspace{8mm}
-Learning to code and analyze data are interesting enough on their own, but biological data presents many unique challenges among analytical fields.
-The desire to try and discern meaningful, clear patterns from such messy subjects helped lead me to work studying cancers.
-I conducted an internship in the Michael Hoffman lab at the University of Toronto under the supervision of Post-Doc and placenta expert Samantha Wilson.
-She conceptualized the project of comparing transcriptomes profiles of various cancers and the placenta, trying to find what the placenta was regulating “correctly”that cancers cells were not.
-I worked with the recount2 data and ended up reading a lot about how transcriptomic data is produced to ensure I knew what to expect and how to work with it.
+Cancer is to vast and complex a beast to try and detect, let alone detect early and robustly, you need equally vast and complex data to study it.
+I encountered this first hand during an internship in the Michael Hoffman lab at the University of Toronto under the supervision of Post-Doc and placenta expert Samantha Wilson.
+She conceptualized our project of comparing transcriptome profiles of various cancers and the placenta, trying to find what the placenta was regulating “correctly” that cancers cells were not.
+Specifically I collected and cleaned the data, preformed batch correction, differential gene expression, gene ontology enrichment, survival analysis for over 20,000 cancer and placenta samples.
+Doing all of these things required reading up about many statistical methods as well as applying and visualizing them using bioconductor, ggplot and some stand alone tools.
 I also spent much of my time visualizing my results and presenting them to experts and non-experts where the placenta and cancers differ and what that could imply for future cancer research.
+\par \hspace{8mm}
+I also have some experience with pipeline development from my undergraduate thesis.
+I was designing an end-to-end pipeline to explore the relationship between rates of horizontal gene transfer and the presence of CRISPR-Cas systems in bacteria.
+This project involved both significant software development and statistical considerations for the final analysis and write-up.
+I wrote scripts to retrieve the data for all complete bacterial genomes on NCBI, produce gene and species trees for each species and preform network analysis.
+Since I was working with several thousand genomes I also needed to make sure that the code was relatively efficient and produced clear progress reports and organized output files.
+Finially I presented my results and thier biological implications in the form a a manuscript.
 \par \hspace{8mm}
 I know my educational background in genetics, experience characterizing cancers and enthusiasm for intricate biological problems makes me especially suited for this internship.
 

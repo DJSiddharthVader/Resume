@@ -128,14 +128,14 @@
 \definecolor{red}{HTML}{FB4485}
 \definecolor{blue}{HTML}{6CE0F1}
 % Text colors
-\definecolor{darktext}{HTML}{414141}
-\colorlet{text}{darkgray}
+\definecolor{darktext}{HTML}{2f3330}
+\colorlet{text}{darktext}
 \colorlet{graytext}{gray}
 \colorlet{lighttext}{lightgray}
 % Awesome colors
 \definecolor{awesome-emerald}{HTML}{00A388}
 \definecolor{awesome-skyblue}{HTML}{0395DE}
-\definecolor{awesome-red}{HTML}{DC3522}
+\definecolor{awesome-red}{HTML}{d32612}
 \definecolor{awesome-pink}{HTML}{EF4089}
 \definecolor{awesome-orange}{HTML}{FF6138}
 \definecolor{awesome-nephritis}{HTML}{27AE60}
@@ -193,9 +193,10 @@
 % For fundamental structures
 \newcommand*{\headerfirstnamestyle}[2][26pt]{{\fontsize{#1}{1em}\headerfontlight\color{awesome} #2}}
 \newcommand*{\headerlastnamestyle}[2][26pt]{{\fontsize{#1}{1em}\headerfont\bfseries\color{text} #2}}
-\newcommand*{\headerpositionstyle}[1]{{\fontsize{14.6pt}{2em}\bodyfont\scshape\color{awesome} #1}}
 \newcommand*{\headeraddressstyle}[1]{{\fontsize{11pt}{1em}\headerfont\itshape\color{lighttext} #1}}
+\newcommand*{\letteraddressstyle}[1]{{\fontsize{8pt}{1em}\headerfont\itshape\color{lighttext} #1}}
 \newcommand*{\headersocialstyle}[1]{{\fontsize{9pt}{1em}\headerfont\color{text} #1}}
+\newcommand*{\lettersocialstyle}[1]{{\fontsize{7pt}{1em}\headerfont\color{linkcolor}\ul{\mbox{#1}}}}
 \newcommand*{\headerquotestyle}[1]{{\fontsize{9pt}{1em}\bodyfont\itshape\color{darktext} #1}}
 \newcommand*{\footerstyle}[1]{{\fontsize{8pt}{1em}\footerfont\scshape\color{lighttext} #1}}
 %\newcommand*{\sectionstyle}[1]{{\fontsize{16pt}{1em}\bodyfont\bfseries\color{text}\@sectioncolor #1}}
@@ -361,7 +362,7 @@
 \newcommand{\acvHeaderAfterAddressSkip}{-.5mm}
 \newcommand{\acvHeaderIconSep}{\space}
 \newcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
-\newcommand{\acvHeaderAfterSocialSkip}{6mm}
+\newcommand{\acvHeaderAfterSocialSkip}{3mm}
 \newcommand{\acvHeaderAfterQuoteSkip}{5mm}
 
 % Others
@@ -389,15 +390,14 @@
 %----------------------------------------------------------
 % Define a header for CV
 % Usage: \makecvheader
-\newcommand*{\makecvheader}[3][0in]{%
+\newcommand*{\makecvheader}[4][0in]{%
   \newlength{\headertextwidth}
   \setlength{\headertextwidth}{\textwidth}
   \begin{minipage}[c]{\headertextwidth}
       \vspace{#1}
     \ifthenelse{\equal{#2}{L}}{\raggedright}{\ifthenelse{\equal{#2}{R}}{\raggedleft}{\centering}}
     \headerfirstnamestyle[#3]{\@firstname}\headerlastnamestyle[#3]{{}\acvHeaderNameDelim\@lastname}%
-    \\[\acvHeaderAfterNameSkip]%
-    \ifthenelse{\isundefined{\@position}}{}{\headerpositionstyle{\@position\\[\acvHeaderAfterPositionSkip]}}%
+    \\[#4]%
     \ifthenelse{\isundefined{\@address}}{}{\headeraddressstyle{\@address\\[\acvHeaderAfterAddressSkip]}}%
     \headersocialstyle{%
       \newbool{isstart}%
@@ -623,6 +623,69 @@
   \lettertextstyle
 }{%
 }
+\newcommand*{\makeletterheader}[1]{%
+  \newlength{\headertextwidth}
+  \setlength{\headertextwidth}{\textwidth}
+  \begin{minipage}[c]{\headertextwidth}
+      \vspace{-0.22in}
+    \ifthenelse{\equal{#1}{L}}{\raggedright}{\ifthenelse{\equal{#1}{R}}{\raggedleft}{\centering}}
+    \headerfirstnamestyle[16pt]{\@firstname}\headerlastnamestyle[16pt]{{}\acvHeaderNameDelim\@lastname}%
+    \\[2.4mm]%
+    \ifthenelse{\isundefined{\@address}}{}{\letteraddressstyle{\@address\\[\acvHeaderAfterAddressSkip]}}%
+    \headersocialstyle{%
+      \newbool{isstart}%
+      \setbool{isstart}{true}%
+      \ifthenelse{\isundefined{\@mobile}}%
+        {}%
+        {%
+          \faMobile\acvHeaderIconSep\@mobile%
+          \setbool{isstart}{false}%
+        }%
+      \ifthenelse{\isundefined{\@email}}%
+        {}%
+        {%
+          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderIconSep}%
+          \faEnvelope\acvHeaderIconSep\href{mailto:\@email}{\lettersocialstyle{\@email}}%
+        }%
+      \ifthenelse{\isundefined{\@homepage}}%
+        {}%
+        {%
+          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderIconSep}%
+          {\faHome\acvHeaderIconSep\clink{http://\@homepage}{\@homepage}}%
+        }%
+      \ifthenelse{\isundefined{\@github}}%
+        {}%
+        {%
+            \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderIconSep}%
+          {\faGithubSquare\acvHeaderIconSep\href{https://github.com/\@github}{\lettersocialstyle{\@github}}}%
+        }%
+      \ifthenelse{\isundefined{\@stackoverflowid}}%
+        {}%
+        {%
+          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderIconSep}%
+          \clink{https://stackoverflow.com/users/\@stackoverflowid}{\faStackOverflow\acvHeaderIconSep\@stackoverflowname}%
+        }%
+      \ifthenelse{\isundefined{\@linkedin}}%
+        {}%
+        {%
+          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderIconSep}%
+          \faLinkedinSquare\acvHeaderIconSep\href{https://ca.linkedin.com/in/siddharth-reed-65397012a}{\lettersocialstyle{\@linkedin}}%
+        }%
+      \ifthenelse{\isundefined{\@twitter}}%
+        {}%
+        {%
+          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderIconSep}%
+          \clink{https://twitter.com/\@twitter}{\faTwitter\acvHeaderIconSep\@twitter}%
+        }%
+      \ifthenelse{\isundefined{\@extrainfo}}%
+        {}%
+        {%
+          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderIconSep}%
+          \@extrainfo%
+        }%
+    } \\[\acvHeaderAfterSocialSkip]%
+  \end{minipage}%
+}
 
 % Define a section for the cover letter
 % Usage: \lettersection{<section-title>}
@@ -658,7 +721,7 @@
 \newcommand{\@program}{MSc. Student in Computational Biology}
 \newcommand{\@university}{Car\hspace{0.03em}negie Mellon University}
 \newcommand*{\makeletterclosing}{%
-  \vspace{0.4in}
+  \vspace{0.5in}
   \lettertextstyle{\@letterclosing} \\
   \letternamestyle{\@firstname\ \@lastname} \\
   \lettertextstyle{\@program} \\

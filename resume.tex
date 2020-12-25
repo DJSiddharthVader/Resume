@@ -3,14 +3,15 @@
 \geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
 \input{./personal_info.tex}
 %--------------------------------------------------------------------------
+% stronger verbs (no 'worked on')
+% past tenses
+
 \begin{document}
 %HEADER/FOOTER
+\topskip0pt
+\vspace*{\fill} %fill top and bottom with space equally if resume doesnt fill page
 % Give optional argument to change alignment(C: center, L: left, R: right)
-\makecvheader{C}{26pt}
-% Print the footer with 3 arguments(<left>, <center>, <right>)
-% Leave any of these blank if they are not needed
-\makecvfooter{Siddharth Reed}{Résumé}{\today}
-%----------------------------------------------------------
+\makecvheader{C}{26pt}{0.1in}
 %CV/RESUME CONTENT---------------------------------------------------------
 %\input{resume/summary.tex}
 \input{resume/education.tex}
@@ -19,11 +20,15 @@
 \vspace{-0.1in}
 \input{resume/extracurricular.tex}
 \vspace{-0.1in}
-\input{resume/honors.tex}
+%\input{resume/honors.tex}
 \vspace{-0.1in}
 \input{resume/skills.tex}
 %\input{resume/presentation.tex}
 %\input{resume/writing.tex}
 %\input{resume/committees.tex}
-%--------------------------------------------------------------------------
+%FOOTER---------------------------------------------------------------------
+% Print the footer with 3 arguments(<left>, <center>, <right>)
+% Leave any of these blank if they are not needed
+\vspace*{\fill}
+\makecvfooter{Siddharth Reed}{Résumé}{\today}
 \end{document}

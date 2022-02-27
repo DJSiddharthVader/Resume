@@ -605,8 +605,8 @@
     \recipientaddressstyle{\@recipientaddress}
   \end{singlespace}
   \ifthenelse{\isundefined{\@lettertitle}}
-    {\vspace{0.3in}}
-    {\lettertitlestyle{\@lettertitle}\vspace{0.3in}\\}
+        {\vspace{0.3in}}
+        {\lettertitlestyle{\@lettertitle}\\} %\vspace{0.3in}\\}
   \lettertextstyle{\@letteropening}
 
 }
@@ -616,11 +616,11 @@
 \newcommand{\@program}{MSc. Student in Computational Biology}
 \newcommand{\@university}{Car\hspace{0.03em}negie Mellon University}
 \newcommand*{\makeletterclosing}{%
-  \vspace{0.4in}
+  % \vspace{0.4in}
   \lettertextstyle{\@letterclosing} \\
   \letternamestyle{\@firstname\ \@lastname} \\
-  \lettertextstyle{\@program} \\
-  \lettertextstyle{\@university} \\
+  % \lettertextstyle{\@program} \\
+  % \lettertextstyle{\@university} \\
   \ifthenelse{\isundefined{\@letterenclosure}}
     {}
     {
